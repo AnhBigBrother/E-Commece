@@ -1,0 +1,19 @@
+version: '2.27.0'
+
+services:
+  server:
+    build: ./backend
+    container_name: ecommece_server_c
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+  client:
+    build: ./frontend
+    container_name: ecommece_client_c
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
