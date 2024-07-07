@@ -119,7 +119,7 @@ const SignUp = () => {
 
           <button
             type='submit'
-            className='bg-rose-500 hover:bg-rose-600 px-4 py-2 rounded-md w-24 text-white'>
+            className='bg-rose-500 hover:bg-rose-600 px-4 py-2 rounded-md w-24 text-white flex items-center justify-center'>
             {isloading ? <ButtonLoader /> : <span>Sign up</span>}
           </button>
         </form>

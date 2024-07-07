@@ -93,7 +93,7 @@ const Login = () => {
           <div className='flex flex-row gap-3 items-center justify-start'>
             <button
               type='submit'
-              className='bg-rose-500 hover:bg-rose-600 rounded-md p-2 w-24 text-white'>
+              className='bg-rose-500 hover:bg-rose-600 rounded-md p-2 w-24 text-white flex items-center justify-center'>
               {isloading ? <ButtonLoader /> : <span>Sign in</span>}
             </button>
             <p>or</p>

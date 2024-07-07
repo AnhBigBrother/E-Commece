@@ -129,7 +129,7 @@ const Profile = () => {
       </div>
       <button
         type='submit'
-        className='bg-rose-500 hover:bg-rose-600 text-white py-2 rounded-md w-24'>
+        className='bg-rose-500 hover:bg-rose-600 text-white py-2 rounded-md w-24 flex items-center justify-center'>
         {isloading ? <ButtonLoader /> : <span>Update</span>}
       </button>
     </form>
