@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from '../../api/axios.js';
 import updateUserProfile from '../../redux/actions/updateUserProfile.js';
 import updateCart from '../../redux/actions/updateCart.js';
@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import ButtonLoader from '../../components/ButtonLoader.jsx';
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -15,13 +16,8 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [isloading, setIsloading] = useState(false);
 
-  useEffect(() => {
-    if (localStorage.getItem('user')) {
-      navigate('/home');
-    }
-  }, []);
-
-  const handleClickSignIn = async () => {
+  const handleSubmit = async e => {
+    e.preventDefault();
     if (isloading) {
       return;
     }
@@ -54,11 +50,19 @@ const Login = () => {
       });
   };
 
+  const googleAuth = async () => {
+    const res = await axios.post('/auth/google');
+    const { url } = res.data;
+    window.location.href = url;
+  };
+
   return (
     <section className='pl-[10rem] flex flex-wrap'>
       <div className='mr-[4rem] mt-[4rem]'>
-        <h1 className='text-2xl font-semibold mb-4'>Sign in</h1>
-        <div className='container w-[40rem]'>
+        <h1 className='text-2xl font-semibold mb-8'>Sign in</h1>
+        <form
+          onSubmit={e => handleSubmit(e)}
+          className='container w-[40rem]'>
           <div className='my-[2rem]'>
             <label
               htmlFor='email'
@@ -86,14 +90,24 @@ const Login = () => {
               value={password}
               onChange={e => setPassword(e.target.value)}></input>
           </div>
+          <div className='flex flex-row gap-3 items-center justify-start'>
+            <button
+              type='submit'
+              className='bg-rose-500 hover:bg-rose-600 rounded-md p-2 w-24 text-white'>
+              {isloading ? <ButtonLoader /> : <span>Sign in</span>}
+            </button>
+            <p>or</p>
+            <button
+              type='button'
+              onClick={() => googleAuth()}
+              className='flex flex-row items-center justify-center p-2 border rounded-lg gap-2 w-60 hover:bg-neutral-200 dark:hover:bg-neutral-800'>
+              <FcGoogle className='w-6 h-6' />
+              <p>Continue with Google</p>
+            </button>
+          </div>
+        </form>
 
-          <button
-            className='bg-rose-500 hover:bg-rose-700 px-4 py-2 rounded-md'
-            onClick={() => handleClickSignIn()}>
-            {isloading ? <ButtonLoader /> : <span>Sign in</span>}
-          </button>
-        </div>
-        <p className='py-6'>
+        <p className='mt-6'>
           New customer?&nbsp;
           <a
             className='text-rose-500 hover:underline cursor-pointer'

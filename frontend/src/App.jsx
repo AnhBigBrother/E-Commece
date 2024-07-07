@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
@@ -31,24 +31,26 @@ import UpdateProduct from './pages/Admin/UpdateProduct.jsx';
 
 function App() {
   const dispatch = useDispatch();
-  useEffect(() => {
-    if (localStorage.getItem('user')) {
-      axios
-        .get('user')
-        .then(res => {
-          localStorage.setItem('user', JSON.stringify(res.data));
-          dispatch(updateUserProfile(res.data));
-          const cart = {};
-          const favorite = {};
-          res.data.cart.forEach(e => (cart[e] = true));
-          res.data.favorite.forEach(e => (favorite[e] = true));
-          dispatch(updateCart(cart));
-          dispatch(updateFavorite(favorite));
-        })
-        .catch(err => {
-          console.error(err);
-        });
-    }
+  useLayoutEffect(() => {
+    axios
+      .get('user')
+      .then(res => {
+        localStorage.setItem('user', JSON.stringify(res.data));
+        dispatch(updateUserProfile(res.data));
+        const cart = {};
+        const favorite = {};
+        res.data.cart.forEach(e => (cart[e] = true));
+        res.data.favorite.forEach(e => (favorite[e] = true));
+        dispatch(updateCart(cart));
+        dispatch(updateFavorite(favorite));
+      })
+      .catch(err => {
+        console.error(err);
+        localStorage.removeItem('user');
+        dispatch(updateUserProfile({}));
+        dispatch(updateCart({}));
+        dispatch(updateFavorite({}));
+      });
   }, []);
   return (
     <Routes>

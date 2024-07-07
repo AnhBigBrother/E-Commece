@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+const server_host = import.meta.env.VITE_SERVER_HOST;
+
 export default axios.create({
   withCredentials: true,
-  baseURL: 'https://bruhh-e-commece-server.onrender.com/api',
+  baseURL: `${server_host}/api`,
   headers: {
     // withCredentials: true,
     'Content-Type': 'application/json',

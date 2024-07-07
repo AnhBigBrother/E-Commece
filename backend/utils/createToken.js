@@ -8,7 +8,7 @@ const createToken = (res, userId) => {
     httpOnly: true,
     secure: true,
     sameSite: 'None',
-    maxAge: 10 * 24 * 60 * 60 * 1000,
+    maxAge: 12 * 24 * 60 * 60 * 1000,
   });
 };
 

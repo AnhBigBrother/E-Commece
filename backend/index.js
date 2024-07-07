@@ -17,15 +17,16 @@ const port = process.env.PORT;
 const app = express();
 
 // cors
-const whitelist = ['http://localhost:5173', 'https://e-commece-bigbruhh.vercel.app', 'https://bruhh-e-commece.onrender.com'];
+// const whitelist = ['http://localhost:5173', 'http://localhost:5000', 'https://e-commece-bigbruhh.vercel.app', 'https://bruhh-e-commece.onrender.com', 'https://www.googleapis.com', 'https://accounts.google.com'];
 const corsOptions = {
   credentials: true,
   origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
+    // if (whitelist.indexOf(origin) !== -1) {
+    //   callback(null, true);
+    // } else {
+    //   callback(new Error('Not allowed by CORS'));
+    // }
+    callback(null, true);
   },
 };
 

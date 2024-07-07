@@ -17,7 +17,9 @@ const Profile = () => {
   const [address, setAddress] = useState('');
   const [phonenumber, setPhonenumber] = useState('');
   const [isloading, setIsloading] = useState(false);
-  const handleUpdateProfile = () => {
+
+  const handleSubmit = e => {
+    e.preventDefault();
     if (isloading) {
       return;
     }
@@ -59,7 +61,9 @@ const Profile = () => {
   };
 
   return (
-    <div className='flex flex-col items-center gap-[1rem] lg:gap-[2rem] pt-[4rem] w-auto'>
+    <form
+      onSubmit={e => handleSubmit(e)}
+      className='flex flex-col items-center gap-[1rem] lg:gap-[2rem] pt-[4rem] w-auto'>
       <h1 className='text-2xl font-semibold '>Your profile</h1>
       <div className='flex flex-col items-center lg:items-start lg:flex-row justify-start gap-[2rem] lg:gap-[3rem]'>
         <div className='flex flex-col w-[30rem]'>
@@ -124,11 +128,11 @@ const Profile = () => {
         </div>
       </div>
       <button
-        className='bg-rose-500 hover:bg-rose-700 px-4 py-2 rounded-md w-fit'
-        onClick={() => handleUpdateProfile()}>
+        type='submit'
+        className='bg-rose-500 hover:bg-rose-600 text-white py-2 rounded-md w-24'>
         {isloading ? <ButtonLoader /> : <span>Update</span>}
       </button>
-    </div>
+    </form>
   );
 };
 

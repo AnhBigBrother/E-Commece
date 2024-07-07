@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from '../../api/axios.js';
 import updateUserProfile from '../../redux/actions/updateUserProfile.js';
 import { useDispatch } from 'react-redux';
@@ -16,13 +16,8 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isloading, setIsloading] = useState(false);
 
-  useEffect(() => {
-    if (localStorage.getItem('user')) {
-      navigate('/home');
-    }
-  }, []);
-
-  const handleClickSignup = () => {
+  const handleSubmit = e => {
+    e.preventDefault();
     if (isloading) {
       return;
     }
@@ -64,7 +59,9 @@ const SignUp = () => {
     <section className='pl-[10rem] flex flex-col flex-wrap'>
       <div className='mr-[4rem] mt-[4rem]'>
         <h1 className='text-2xl font-semibold mb-4'>Sign up</h1>
-        <div className='container w-[40rem]'>
+        <form
+          onSubmit={e => handleSubmit(e)}
+          className='container w-[40rem]'>
           <div className='my-[2rem]'>
             <label
               htmlFor='username'
@@ -121,11 +118,11 @@ const SignUp = () => {
           </div>
 
           <button
-            className='bg-rose-500 hover:bg-rose-700 px-4 py-2 rounded-md'
-            onClick={() => handleClickSignup()}>
+            type='submit'
+            className='bg-rose-500 hover:bg-rose-600 px-4 py-2 rounded-md w-24 text-white'>
             {isloading ? <ButtonLoader /> : <span>Sign up</span>}
           </button>
-        </div>
+        </form>
         <p className='py-6'>
           Already have an account?&nbsp;
           <a
