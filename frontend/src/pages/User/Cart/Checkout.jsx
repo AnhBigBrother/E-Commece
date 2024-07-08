@@ -120,7 +120,7 @@ const Checkout = () => {
         </div>
       </div>
       <button
-        className='w-[30rem] ml-4 bg-rose-500 hover:bg-rose-700 p-3 rounded-lg flex justify-center items-center'
+        className='w-[30rem] ml-4 bg-rose-500 hover:bg-rose-600 p-3 rounded-lg flex justify-center items-center'
         onClick={handlePlaceOrder}>
         {loading ? <ButtonLoader /> : <span>Place order</span>}
       </button>

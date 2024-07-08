@@ -121,7 +121,7 @@ const ProductCard = ({ data }) => {
         <p className='line-clamp-2 mb-2 text-sm font-light'>{data.description}</p>
         <div className='flex flex-row items-center justify-between'>
           <button
-            className='px-3 py-2 rounded-md bg-rose-500 hover:bg-rose-700 flex flex-row items-center gap-2'
+            className='px-3 py-2 rounded-md bg-rose-500 hover:bg-rose-600 flex flex-row items-center gap-2'
             onClick={() => navigate(`/products/${data._id}`)}>
             <span>Read more</span>
             <FaArrowRight />

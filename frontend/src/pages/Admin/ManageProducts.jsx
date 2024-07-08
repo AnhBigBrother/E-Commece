@@ -45,12 +45,12 @@ const ProductItem = ({ data }) => {
             <p className='text-xl font-semibold'>&#36;&#32;{data.price}</p>
             <div className='flex flex-row gap-3 justify-start'>
               <button
-                className='px-2 py-1 bg-rose-500 hover:bg-rose-700 rounded-md'
+                className='px-2 py-1 bg-rose-500 hover:bg-rose-600 rounded-md'
                 onClick={() => navigate(`${data._id}`)}>
                 Update
               </button>
               <button
-                className='px-2 py-1 bg-rose-500 hover:bg-rose-700 rounded-md'
+                className='px-2 py-1 bg-rose-500 hover:bg-rose-600 rounded-md'
                 onClick={() => handleDeleteProduct()}>
                 {isLoading ? <ButtonLoader /> : <span>Delete</span>}
               </button>

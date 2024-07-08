@@ -84,25 +84,25 @@ const Order = ({ order }) => {
             <>
               {orderStatus === 'pending' ? (
                 <button
-                  className='p-2 bg-rose-500 hover:bg-rose-700 h-10 rounded-lg'
+                  className='p-2 bg-rose-500 hover:bg-rose-600 h-10 rounded-lg flex items-center justify-center'
                   onClick={() => handleChangeOrderStatus('accepted')}>
                   {isLoading ? <ButtonLoader /> : <span>Mark as accepted</span>}
                 </button>
               ) : orderStatus === 'accepted' ? (
                 <button
-                  className='p-2 bg-rose-500 hover:bg-rose-700 h-10 rounded-lg'
+                  className='p-2 bg-rose-500 hover:bg-rose-600 h-10 rounded-lg flex items-center justify-center'
                   onClick={() => handleChangeOrderStatus('delivering')}>
                   {isLoading ? <ButtonLoader /> : <span>Mark as delivering</span>}
                 </button>
               ) : (
                 <button
-                  className='p-2 bg-rose-500 hover:bg-rose-700 h-10 rounded-lg'
+                  className='p-2 bg-rose-500 hover:bg-rose-600 h-10 rounded-lg flex items-center justify-center'
                   onClick={() => handleChangeOrderStatus('completed')}>
                   {isLoading ? <ButtonLoader /> : <span>Mark as completed</span>}
                 </button>
               )}
               <button
-                className='p-2 bg-rose-500 hover:bg-rose-700 h-10 rounded-lg'
+                className='p-2 bg-rose-500 hover:bg-rose-600 h-10 rounded-lg flex items-center justify-center'
                 onClick={() => handleChangeOrderStatus('canceled')}>
                 Cancel this order
               </button>

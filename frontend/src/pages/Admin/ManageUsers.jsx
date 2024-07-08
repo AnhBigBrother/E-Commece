@@ -87,7 +87,7 @@ const UserRow = ({ user }) => {
                     <PageLoader />
                   ) : (
                     <LuCheck
-                      className='h-6 w-auto px-3 py-1 bg-rose-500 hover:bg-rose-700 rounded-md cursor-pointer'
+                      className='h-6 w-auto px-3 py-1 bg-rose-500 hover:bg-rose-600 rounded-md cursor-pointer'
                       onClick={() => handleChangeName()}
                     />
                   )

@@ -327,7 +327,7 @@ const UpdateProduct = () => {
               value={categoryInput}
               onChange={e => setCategoryInput(e.target.value)}></input>
             <button
-              className='bg-rose-500 hover:bg-rose-700 p-2 rounded-md'
+              className='bg-rose-500 hover:bg-rose-600 p-2 rounded-md'
               onClick={() => handleCreateCategory()}>
               {loader1 ? <ButtonLoader /> : <p>Create</p>}
             </button>
@@ -348,12 +348,12 @@ const UpdateProduct = () => {
             className='border mt-1 p-2 rounded-md w-full border-neutral-400 bg-neutral-100 dark:bg-neutral-800 resize-none'></textarea>
         </div>
         <button
-          className='py-2 bg-rose-500 hover:bg-rose-700 rounded-md w-full flex flex-row justify-center'
+          className='py-2 bg-rose-500 hover:bg-rose-600 rounded-md w-full flex flex-row justify-center'
           onClick={() => handleUpdateProduct()}>
           {loader2 ? <ButtonLoader /> : <p>Update product</p>}
         </button>
         <button
-          className='py-2 bg-rose-500 hover:bg-rose-700 rounded-md w-full flex flex-row justify-center'
+          className='py-2 bg-rose-500 hover:bg-rose-600 rounded-md w-full flex flex-row justify-center'
           onClick={() => handleDeleteProduct()}>
           {loader2 ? <ButtonLoader /> : <p>Delete product</p>}
         </button>

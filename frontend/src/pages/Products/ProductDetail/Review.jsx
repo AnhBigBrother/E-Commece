@@ -99,7 +99,7 @@ const Review = ({ data, id }) => {
             onChange={e => setComment(e.target.value)}></textarea>
         </div>
         <button
-          className='w-fit px-3 py-2 bg-rose-500 hover:bg-rose-700 rounded-md mt-3'
+          className='w-fit px-3 py-2 bg-rose-500 hover:bg-rose-600 rounded-md mt-3'
           onClick={handleSubmitReview}>
           Submit
         </button>

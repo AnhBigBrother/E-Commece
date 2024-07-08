@@ -62,7 +62,7 @@ const Order = ({ order }) => {
         </p>
         {orderStatus === 'pending' && (
           <button
-            className='w-fit bg-rose-500 hover:bg-rose-700 rounded-md px-3 py-2 mt-1'
+            className='w-fit bg-rose-500 hover:bg-rose-600 rounded-md px-3 py-2 mt-1'
             onClick={() => handleCancelOrder(order._id)}>
             {isCanceling ? <ButtonLoader /> : <span>Cancel this order</span>}
           </button>

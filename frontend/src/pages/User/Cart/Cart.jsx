@@ -70,7 +70,7 @@ const Cart = () => {
       <div className='flex flex-col gap-3 w-[20rem]'>
         <p className='text-xl font-semibold text-rose-500'>Total price: &#36;{total}</p>
         <button
-          className='p-2 w-full bg-rose-500 hover:bg-rose-700 rounded-md'
+          className='p-2 w-full bg-rose-500 hover:bg-rose-600 rounded-md'
           onClick={handleCheckout}>
           Checkout
         </button>

@@ -91,7 +91,7 @@ const ProductDetail = () => {
                   </div>
                 </div>
                 <button
-                  className='rounded-md py-2 px-3 bg-rose-500 hover:bg-rose-700 w-fit'
+                  className='rounded-md py-2 px-3 bg-rose-500 hover:bg-rose-600 w-fit'
                   onClick={handleAddToCart}>
                   {isAddingToCart ? <ButtonLoader /> : <span>Add to cart</span>}
                 </button>

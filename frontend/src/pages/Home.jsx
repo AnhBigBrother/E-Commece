@@ -54,7 +54,7 @@ const Home = () => {
           <div className='w-full flex flex-row items-center justify-between'>
             <h1 className='text-3xl font-bold'>Special</h1>
             <button
-              className='py-2 px-5 rounded-full bg-rose-500 hover:bg-rose-700 flex flex-row gap-2 items-center'
+              className='py-2 px-5 rounded-full bg-rose-500 hover:bg-rose-600 flex flex-row gap-2 items-center'
               onClick={() => navigate('/products')}>
               <span>Shop now</span>
               <FaArrowRight />
@@ -80,7 +80,7 @@ const Home = () => {
           <div className='w-full flex flex-row items-center justify-between'>
             <h1 className='text-3xl font-bold'>Best seller</h1>
             <button
-              className='py-2 px-5 rounded-full bg-rose-500 hover:bg-rose-700 flex flex-row gap-2 items-center'
+              className='py-2 px-5 rounded-full bg-rose-500 hover:bg-rose-600 flex flex-row gap-2 items-center'
               onClick={() => navigate('/products')}>
               <span>Shop now</span>
               <FaArrowRight />
@@ -106,7 +106,7 @@ const Home = () => {
           <div className='w-full flex flex-row items-center justify-between'>
             <h1 className='text-3xl font-bold'>Newest</h1>
             <button
-              className='py-2 px-5 rounded-full bg-rose-500 hover:bg-rose-700 flex flex-row gap-2 items-center'
+              className='py-2 px-5 rounded-full bg-rose-500 hover:bg-rose-600 flex flex-row gap-2 items-center'
               onClick={() => navigate('/products')}>
               <span>Shop now</span>
               <FaArrowRight />

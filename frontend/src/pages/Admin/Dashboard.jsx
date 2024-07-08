@@ -95,22 +95,22 @@ const Dashboard = () => {
       </div>
       <div className='flex flex-col gap-2'>
         <button
-          className='bg-rose-500 hover:bg-rose-700 p-2 rounded-md w-[16rem]'
+          className='bg-rose-500 hover:bg-rose-600 p-2 rounded-md w-[16rem]'
           onClick={() => navigate('/admin/products/create')}>
           Create new product
         </button>
         <button
-          className='bg-rose-500 hover:bg-rose-700 p-2 rounded-md w-[16rem]'
+          className='bg-rose-500 hover:bg-rose-600 p-2 rounded-md w-[16rem]'
           onClick={() => navigate('/admin/products')}>
           Manage products
         </button>
         <button
-          className='bg-rose-500 hover:bg-rose-700 p-2 rounded-md w-[16rem]'
+          className='bg-rose-500 hover:bg-rose-600 p-2 rounded-md w-[16rem]'
           onClick={() => navigate('/admin/orders')}>
           Mange orders
         </button>
         <button
-          className='bg-rose-500 hover:bg-rose-700 p-2 rounded-md w-[16rem]'
+          className='bg-rose-500 hover:bg-rose-600 p-2 rounded-md w-[16rem]'
           onClick={() => navigate('/admin/users')}>
           Manage users
         </button>
