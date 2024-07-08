@@ -1,9 +1,0 @@
-PORT=5000
-DB_URI=mongodb+srv://anhbigbrother:2ydLygcHTHNnBCCM@cluster0.r9rhncq.mongodb.net/ECommece
-JWT_SECRET=5e2a7d463c8a7658e0a797512877938d83b47ad7520f0125277364a7973698bc
-FB_API_KEY=AIzaSyCi0y13uTdaJkFXUUYPUGX1gons1cHmqso
-FB_AUTH_DOMAIN=shop-punk.firebaseapp.com
-FB_PROJECT_ID=shop-punk
-FB_STORAGE_BUGKET=shop-punk.appspot.com
-FB_MESSAGINGSENDER_ID=582532227061
-FB_APP_ID=1:582532227061:web:e475d7c75b0d571cb24abc
