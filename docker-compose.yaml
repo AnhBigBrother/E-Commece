@@ -1,4 +1,4 @@
-version: '2.27.0'
+version: '3'
 
 services:
   server:
@@ -13,7 +13,7 @@ services:
     build: ./frontend
     container_name: ecommece_client_c
     ports:
-      - "5173:5173"
+      - '5173:5173'
     volumes:
       - ./frontend:/app
       - /app/node_modules

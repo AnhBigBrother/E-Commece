@@ -7,6 +7,7 @@ import BrandRadioButton from './BrandRadioButton';
 import CategoryCheckBox from './CategoryCheckBox';
 import SortBy from './SortBy';
 import { useSearchParams } from 'react-router-dom';
+import PageLoader from '../../../components/PageLoader';
 
 const AllProducts = () => {
   const [searchParams] = useSearchParams();
@@ -23,28 +24,36 @@ const AllProducts = () => {
       <div className='sticky top-24 p-5 mb-24 rounded-lg flex flex-col gap-6 w-fit h-fit bg-neutral-200 dark:bg-neutral-800'>
         <div className='flex flex-col gap-3'>
           <p className='w-full rounded-full py-2 px-5 text-center bg-white dark:bg-black text-nowrap'>Filter by categories</p>
-          <div className='flex flex-col gap-1 px-4'>
-            {categories.map(e => (
-              <CategoryCheckBox
-                key={`${e._id}-checkbox`}
-                category={e}
-                setSelectedCategories={setSelectedCategories}
-              />
-            ))}
-          </div>
+          {categoriesIsLoading ? (
+            <PageLoader />
+          ) : (
+            <div className='flex flex-col gap-1 px-4'>
+              {categories.map(e => (
+                <CategoryCheckBox
+                  key={`${e._id}-checkbox`}
+                  category={e}
+                  setSelectedCategories={setSelectedCategories}
+                />
+              ))}
+            </div>
+          )}
         </div>
         <div className='flex flex-col gap-3'>
           <p className='w-full rounded-full py-2 px-5 text-center bg-white dark:bg-black text-nowrap'>Filter by brand</p>
-          <div className='flex flex-col gap-1 px-4'>
-            {brands.map((e, i) => (
-              <BrandRadioButton
-                key={`checkbox-${i}`}
-                brand={e}
-                selectedBrand={selectedBrand}
-                setSelectedBrand={setSelectedBrand}
-              />
-            ))}
-          </div>
+          {brandIsLoading ? (
+            <PageLoader />
+          ) : (
+            <div className='flex flex-col gap-1 px-4'>
+              {brands.map((e, i) => (
+                <BrandRadioButton
+                  key={`checkbox-${i}`}
+                  brand={e}
+                  selectedBrand={selectedBrand}
+                  setSelectedBrand={setSelectedBrand}
+                />
+              ))}
+            </div>
+          )}
         </div>
         <div className='flex flex-col gap-3'>
           <p className='w-full rounded-full py-2 px-5 text-center bg-white dark:bg-black text-nowrap'>Sort products</p>
