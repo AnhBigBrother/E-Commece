@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
@@ -31,7 +31,7 @@ import UpdateProduct from './pages/Admin/UpdateProduct.jsx';
 
 function App() {
   const dispatch = useDispatch();
-  useLayoutEffect(() => {
+  useEffect(() => {
     axios
       .get('user')
       .then(res => {

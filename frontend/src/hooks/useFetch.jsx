@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 import axios from '../api/axios';
 
 const useFetch = path => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    console.log(path);
     setIsLoading(true);
     axios
       .get(path)
